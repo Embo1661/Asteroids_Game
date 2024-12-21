@@ -7,7 +7,8 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
-    while True:                                     #while True infined game loop
+    while True:                                     #infined game loop
+        
         for event in pygame.event.get():            #pygame X (exit game)
             if event.type == pygame.QUIT:
                 return clock.tick(60)
