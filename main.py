@@ -32,6 +32,11 @@ def main():
         for obj in updateable:
             obj.update(dt)
 
+        for asteroid in asteroids:
+            if asteroid.collides_with(player):
+                print("Game over!")
+                exit()
+
         screen.fill("black")
 
         for obj in drawable:
@@ -39,7 +44,7 @@ def main():
 
         pygame.display.flip()                       #update game
 
-        dt = clock.tick(60) / 1000                  # limit the framerate to 60 fps
+        dt = clock.tick(60) / 1000                  #limit the framerate to 60 fps
 
 if __name__ == "__main__":
     main()
